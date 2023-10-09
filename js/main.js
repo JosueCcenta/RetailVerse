@@ -94,8 +94,10 @@ function agregarAlCarrito(e){
         onClick: function(){} 
       }).showToast();
       
-    const idBoton = e.currentTarget.id;
-    const productoAgregado = productos.find(producto => producto.id === 2);
+      const idBoton = parseInt(e.currentTarget.id); 
+
+      const productoAgregado = productos.find(producto => producto.id === idBoton);
+
     if(productosEnCarrito.some(producto => producto.id === idBoton)) {
         const index = productosEnCarrito.findIndex(producto => producto.id === idBoton);
         productosEnCarrito[index].cantidad++;
@@ -112,4 +114,5 @@ function agregarAlCarrito(e){
 function actualizarNumerito() {
     let nuevoNumerito = productosEnCarrito.reduce((acc, producto) => acc + producto.cantidad, 0);
     numerito.innerText = nuevoNumerito;
+
 }
