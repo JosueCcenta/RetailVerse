@@ -6,6 +6,7 @@ $correoElectronico = $_POST['correoElectronico'];
 $categoria = $_POST['categoria'];
 
 try {
+    /* Este código está actualizando un registro en la tabla "usuarios" de una base de datos MySQL. */
     $pdo = new PDO('mysql:host=localhost;dbname=test', 'root', '');
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 

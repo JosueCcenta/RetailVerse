@@ -7,11 +7,17 @@ if($_POST){
     $_SESSION['user'] = $usuario;
 
     try {
+ /* Este código está realizando una consulta a la base de datos para seleccionar todas las filas de la tabla "usuarios" donde el
+ "usuario" coincide con el nombre de usuario proporcionado y la columna "contrasena" coincide con el nombre de usuario proporcionado
+ contraseña. */
         $sql = "SELECT * FROM usuarios WHERE usuario = :usuario AND contrasena = :contrasena";
         $resultado = $bd->prepare($sql);
         $resultado->bindParam(":usuario", $usuario, PDO::PARAM_STR);
         $resultado->bindParam(":contrasena", $contraseña, PDO::PARAM_STR);
         $resultado->execute();
+
+      /* Este bloque de código está comprobando si el resultado de la consulta 'sql' no está vacío. Si no está vacío,
+      comprueba el valor de la columna 'idCargo' y redirecciona dependiendo del cargo que tengan. */
 
         $registro = $resultado->fetch(PDO::FETCH_ASSOC);
 

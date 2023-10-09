@@ -1,5 +1,8 @@
 <?php
 
+/* El código está comprobando si el array'' no está vacía, lo que significa que se ha enviado un formulario.
+A continuación, recupera el valor del campo 'correo electrónico' del formulario y lo asigna a la variable
+correo. Luego verifica si el correo esta registrado y nos envia un mensaje por pantalla de confirmacion de correo o si no existe el correo */
 require 'conexion.php';
 
 try {

@@ -14,6 +14,10 @@ const inputVisibleXL = document.getElementById("XL-invisible");
 const inputVisibleZapatilla = document.getElementById("Zapatilla-invisible");
 
 
+/**
+ * La función "mostrarInputsTallas" agrega detectores de eventos a las casillas de verificación y muestra las correspondientes
+ * Campos de entrada cuando las casillas de verificación están marcadas.
+ */
 
 function mostrarInputsTallas(){
 

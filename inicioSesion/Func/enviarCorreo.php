@@ -6,9 +6,15 @@ if (isset($_SESSION['correo'])) {
     $correoUsuario = $_SESSION['correo'];
 } 
 
+/* El código genera un token aleatorio usando 'random_bytes(16)' y lo convierte a un hexadecimal
+string usando 'bin2hex()'. Este token se utilizará para restablecer la contraseña o verificar. */
 $token = bin2hex(random_bytes(16));
 $expiracion = date('Y-m-d H:i:s', strtotime('+1 hour'));
 
+/* Este código está actualizando la tabla "usuarios" en la base de datos con un nuevo token y una fecha de vencimiento para
+un usuario específico. Utiliza instrucciones preparadas para evitar la inyección SQL. El token y la caducidad
+los valores se enlazan a la instrucción preparada mediante el método 'bindParam'. Después de ejecutar el comando
+, genera un enlace de verificación utilizando el token y lo asigna a la variable`enlace`. */
 $insertarToken="UPDATE usuarios SET token=:token,expiracionToken=:expiracion WHERE correoElectronico=:correo";
 $resultado=$bd->prepare($insertarToken);
 $resultado->bindParam(":correo",$correoUsuario);
@@ -96,12 +102,16 @@ $cuerpo.='
 </html>';
 $headers  = "MIME-Version: 1.0\r\n"; 
 $headers .= "Content-type: text/html; charset=iso-8859-1\r\n"; 
-$headers .= "From: Josue\r\n"; 
+$headers .= "From: \r\n"; 
 $headers .= "Reply-To: "; 
 $headers .= "Return-path:"; 
 $headers .= "Cc:"; 
 $headers .= "Bcc:"; 
 
+/* La función 'mail()' se utiliza para enviar un correo electrónico. En este código, se utiliza para enviar un correo electrónico a
+el destinatario especificado en la variable 'destinatario'. El correo electrónico tendrá el asunto especificado
+en la variable 'asunto' y el contenido especificado en la variable 'cuerpo'. Los encabezados de la clase
+email se especifican en la variable 'headers'. */
 mail($destinatario,$asunto,$cuerpo,$headers);
 
 

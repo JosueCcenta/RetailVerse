@@ -2,6 +2,7 @@
 $id = $_POST['id'];
 
 try {
+/* Este código está realizando una operación DELETE en una tabla de base de datos MySQL llamada "usuarios". */
     $pdo = new PDO('mysql:host=localhost;dbname=test', 'root', '');
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 

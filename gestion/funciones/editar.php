@@ -7,7 +7,12 @@ $cantidad = $_POST['cantidad'];
 $imagen="";
 $carpetaDestino = "img/";
 $rutaCompleta="";
-
+/* Este bloque de código es responsable de manejar el archivo de imagen cargado. Comprueba si un archivo de imagen fue
+cargado y si no hay errores en el proceso de carga. A continuación, comprueba la extensión del archivo para
+Asegúrese de que sea uno de los tipos permitidos (jpg, jpeg, png). Si el archivo supera estas comprobaciones,
+genera un nombre único para el archivo, especifica la carpeta de destino del archivo y mueve el
+temporal a la carpeta de destino. Por último, se hace eco de un mensaje de éxito si el archivo fue
+cargado correctamente, o un mensaje de error si hubo un problema con la carga. */
     if (isset($_FILES["imagen"]) && $_FILES["imagen"]["error"] === 0) {
         $nombreArchivo = $_FILES["imagen"]["name"];
         $archivoTmp = $_FILES["imagen"]["tmp_name"];
@@ -35,6 +40,8 @@ $rutaCompleta="";
     } 
 
     try {
+       /* Este bloque de código se encarga de actualizar un registro en la tabla "productos" de un MySQL
+       base de datos. */
         $pdo = new PDO('mysql:host=localhost;dbname=test', 'root', '');
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     

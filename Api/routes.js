@@ -1,3 +1,4 @@
+/* Este código está creando un controlador de rutas utilizando el marco Express en JavaScript. */
 const express= require('express')
 const routes = express.Router()
 

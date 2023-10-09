@@ -1,3 +1,4 @@
+/* Establece una conexión a una base de datos MySQL usando el PDO de PHP (PHP Data Objects). */
 <?php
 $dbname="test";
 $user="root";

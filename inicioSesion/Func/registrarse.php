@@ -12,6 +12,7 @@ $cargo=2;
 try {
     $sql="INSERT INTO usuarios(nombre,apellido,usuario,contrasena,correoElectronico,idCargo)VALUES(:nombre,:apellido,:usuario,:contrasena,:correo,:cargo)";
     
+    /* Este código está realizando una comprobación de verificación antes de insertar un nuevo usuario en la base de datos. */
     $verification="SELECT * FROM usuarios WHERE usuario=:usuario OR correoElectronico=:correo";
     $verificacion= $bd->prepare($verification);
     $verificacion->bindParam(":usuario",$usuario);
@@ -23,7 +24,7 @@ try {
         die();
     }
     $verificacion->closeCursor();
-
+    /*Inserta los valores en la base de datos con el script sql*/ 
     $resultado = $bd->prepare($sql);
     $resultado->bindParam(":nombre", $nombre);
     $resultado->bindParam(":apellido", $apellido);

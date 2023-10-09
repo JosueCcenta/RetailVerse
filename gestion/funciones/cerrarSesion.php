@@ -1,4 +1,5 @@
 <?php
+//Solo esta cerrando las sesion
 session_start();
 $_SESSION = array();
 session_destroy();

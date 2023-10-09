@@ -2,6 +2,12 @@
 session_start();
 require 'conexion.php';
 
+   /* Este código recupera el valor del parámetro 'token' de la URL mediante la URL.
+A continuación, comprueba si el token no está vacío. Y por ultimo verifica que el token 
+exista dentro de la tabla usuarios en la columna token, si existe guarda el id del usuario
+que tiene el token en una sesion y sino nos dice un mensaje de error y se termina el programa*/
+
+
 $token = $_GET['token'];
 
 if (!empty($token)) {

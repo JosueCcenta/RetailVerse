@@ -14,6 +14,12 @@ $cantidad=$XS+$S+$M+$L+$XL;
 $imagen="";
 $carpetaDestino = "img/";
     
+/* Este bloque de código es responsable de manejar el archivo de imagen cargado. Comprueba si un archivo de imagen fue
+cargado y si no hay errores en el proceso de carga. A continuación, comprueba la extensión del archivo para
+Asegúrese de que sea uno de los tipos permitidos (jpg, jpeg, png). Si el archivo supera estas comprobaciones,
+genera un nombre único para el archivo, especifica la carpeta de destino del archivo y mueve el
+temporal a la carpeta de destino. Por último, se hace eco de un mensaje de éxito si el archivo fue
+cargado correctamente, o un mensaje de error si hubo un problema con la carga. */
     if (isset($_FILES["imagen"]) && $_FILES["imagen"]["error"] === 0) {
         $nombreArchivo = $_FILES["imagen"]["name"];
         $archivoTmp = $_FILES["imagen"]["tmp_name"];
@@ -46,6 +52,10 @@ $carpetaDestino = "img/";
 
 try{
     
+/* Este código establece una conexión a una base de datos MySQL usando PDO (PHP Data Objects). Establece el parámetro
+host, nombre de la base de datos, nombre de usuario y contraseña para la conexión. A continuación, establece el modo de error en
+Produce excepciones si se produce algún error durante la ejecución de las consultas. También establece el carácter
+establecido en UTF-8. */
     $base=new PDO('mysql:host=localhost;dbname=test','root','');
     $base->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
     $base->exec("SET CHARACTER SET utf8");
@@ -60,6 +70,8 @@ try{
     $resultado->closeCursor();
 
 
+    /* Este código recupera el valor máximo de la columna "id" de la tabla "productos" en el archivo
+    base de datos. Asigna el valor máximo a la variable "ultimoid" para su uso posterior. */
     $sql2="SELECT MAX(id) AS ultimo_id FROM productos";
     $resultado = $base->query($sql2);
     $fila = $resultado->fetch(PDO::FETCH_ASSOC);
@@ -67,6 +79,8 @@ try{
     $resultado->closeCursor();
 
 
+   /* Este bloque de código es responsable de insertar datos en la tabla "producto_tallas" en el archivo
+   base de datos. Prepara una sentencia SQL con marcadores de posición para los valores que se van a insertar. */
     $sql3="INSERT INTO producto_tallas(producto_id,XS,S,M,L,XL,numeroZapatilla)VALUES(:idProduc,:xs,:s,:m,:l,:xl,:numZapatilla)";
     $resultado= $base->prepare($sql3);
     $resultado->bindParam(':idProduc',$ultimoID);

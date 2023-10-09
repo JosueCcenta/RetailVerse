@@ -46,6 +46,9 @@ include("funciones/paginacionUsuarios.php");
             </form> 
         </div>
         <nav aria-label="Page navigation example">
+            /* El código está generando un sistema de paginación para la tabla de productos. Crea una lista
+            de números de página y botones de navegación (Anterior y Siguiente) para permitir que el usuario navegue a través de la
+            diferentes páginas de productos. */           
             <ul class="pagination">
                 <li class="page-item <?php echo $_GET['pagina']<=1 ? 'disabled': '' ?>"><a class="page-link" href="http://localhost/inicio/gestion/verUsuarios.php?pagina=<?php echo$_GET['pagina']-1?>">Previous</a></li>
                 
@@ -72,6 +75,8 @@ include("funciones/paginacionUsuarios.php");
             </thead>
             <tbody id="contenido1">
             <?php
+                /* Este bloque de código es responsable de obtener y mostrar los datos de la carpeta
+                "usuarios" en la base de datos. */
                 if(!$_GET){
                     header("Location:http://localhost/inicio/gestion/actualizarProducto.php?pagina=1");
                 }
