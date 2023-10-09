@@ -1,6 +1,6 @@
-/* Este código comprueba si la sesión está vacía o no está configurada. Si la sesión está vacía o no está configurada,
+<?/* Este código comprueba si la sesión está vacía o no está configurada. Si la sesión está vacía o no está configurada,
 muestra un mensaje de error y detiene la ejecución del resto del código usando el comando 'die()'
-función. El mensaje de error se muestra como una alerta con un enlace a la página de inicio de sesión. */
+función. El mensaje de error se muestra como una alerta con un enlace a la página de inicio de sesión. */?>
 
 <?php
     session_start();

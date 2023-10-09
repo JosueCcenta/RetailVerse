@@ -17,7 +17,7 @@
             <div class="form">
                 <div class="titulo">
                     <h1>Recuperar Contraseña</h1>
-                    <a href="/inicioSesion/index.html">Iniciar sesion</a>
+                    <a href="index.php">Iniciar sesion</a>
                 </div>
                 <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
                     <label for=""><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope-at" viewBox="0 0 16 16">
@@ -32,7 +32,7 @@
                 </form>
                 <hr>
                 <p>¿No tienes una cuenta?</p>
-                <a href="/inicioSesion/registro.html">Registrate</a>
+                <a href="registro.php">Registrate</a>
             </div> 
         </div>
 
