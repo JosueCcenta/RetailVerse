@@ -46,9 +46,9 @@ include("funciones/paginacionUsuarios.php");
             </form> 
         </div>
         <nav aria-label="Page navigation example">
-            /* El código está generando un sistema de paginación para la tabla de productos. Crea una lista
+            <?/* El código está generando un sistema de paginación para la tabla de productos. Crea una lista
             de números de página y botones de navegación (Anterior y Siguiente) para permitir que el usuario navegue a través de la
-            diferentes páginas de productos. */           
+            diferentes páginas de productos. */ ?>          
             <ul class="pagination">
                 <li class="page-item <?php echo $_GET['pagina']<=1 ? 'disabled': '' ?>"><a class="page-link" href="http://localhost/inicio/gestion/verUsuarios.php?pagina=<?php echo$_GET['pagina']-1?>">Previous</a></li>
                 
