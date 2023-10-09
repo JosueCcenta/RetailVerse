@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,600;1,300&display=swap');
+*{
+    border: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Raleway', sans-serif;
+}
+h1, h2, h3, a, input, textarea, ul{
+    margin: 0;
+    padding: 0;
+}
+ul{
+    list-style-type: none;
+}
+a{
+    text-decoration: none;
+}
+.contenedor-gestion{
+    display: grid;
+    grid-template-columns: 0.7fr 4fr;
+    background-color:rgb(75, 140, 230);
+}
+aside{
+    padding: 2rem;
+    padding-right: 0;
+    color: rgb(180, 236, 241);
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between ;
+}
+.logo{
+    font-weight: 400;
+    font-size: 2rem;
+}
+.menu{
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+.text-footer{
+    color: rgb(118, 129, 223);
+    font-size: .85rem;
+}
+main {
+    background-color: aliceblue;
+    margin: 1rem;
+    margin-left: 0;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+}
+.contenedorNav {
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.formulario-productos {
+    display: flex;
+}
+.form-control {
+    margin-right: 10px;
+}
+.Titulo-principal {
+    color: rgb(100, 100, 221);
+    margin-bottom: 2rem;
+}
+.boton-menu{
+    background-color: transparent;
+    border: 0;
+    color: white;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    cursor: pointer;
+    font-weight: 600;
+    padding: 1rem;
+    font-size: .85rem;
+    width: 100%;
+}
+.boton-menu.active{
+    background-color: white;
+    color: blue;
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+    position: relative;
+}
+.seccion {
+    width: 50%;
+    float: left;
+}
+
+/* Estilo para el botón */
+.boton {
+    clear: both;
+    margin: 20px auto; /* Centrar el botón */
+    display: block;
+}

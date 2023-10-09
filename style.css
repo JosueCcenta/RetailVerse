@@ -1,0 +1,32 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
+
+.contenedor {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    height: 100vh; 
+}
+
+.mensaje {
+    width: 40%;
+    text-align: center; 
+    border: 1px solid #ccc; 
+    padding: 20px;
+}
+
+.titulo {
+    padding: 5%;
+}
+
+.text-1{
+    text-align: left;
+}
+
+.border{
+    height: 10vh;
+    background-color: blueviolet;
+}
